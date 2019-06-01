@@ -1,5 +1,5 @@
 [package]
-name = "auth-plan9-games"
+name = "auth"
 version = "0.1.0"
 authors = ["Jon Daniel <me@jondaniel.email>"]
 edition = "2018"

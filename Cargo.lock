@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "auth-plan9-games"
+name = "auth"
 version = "0.1.0"
 dependencies = [
  "rocket 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
