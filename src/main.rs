@@ -1,8 +1,10 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 
-#[cfg(test)] mod tests;
+#[cfg(test)]
+mod tests;
 
 use rocket::http::Status;
 use rocket::request::Form;
@@ -14,8 +16,8 @@ fn index() -> &'static str {
 
 #[derive(FromForm)]
 struct AuthRequest {
-  name: String,
-  psk: String,
+    name: String,
+    psk: String,
 }
 
 #[post("/stream-auth", data = "<request>")]
@@ -27,10 +29,8 @@ fn stream_auth(request: Form<AuthRequest>) -> Status {
     }
 }
 
-fn app() -> rocket::Rocket {
-    rocket::ignite().mount("/", routes![index, stream_auth])
-}
-
 fn main() {
-  app().launch();
+    rocket::ignite()
+        .mount("/", routes![index, stream_auth])
+        .launch();
 }
