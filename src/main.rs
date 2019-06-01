@@ -2,6 +2,8 @@
 
 #[macro_use] extern crate rocket;
 
+#[cfg(test)] mod tests;
+
 use rocket::http::Status;
 use rocket::request::Form;
 
@@ -25,8 +27,10 @@ fn stream_auth(request: Form<AuthRequest>) -> Status {
     }
 }
 
+fn app() -> rocket::Rocket {
+    rocket::ignite().mount("/", routes![index, stream_auth])
+}
+
 fn main() {
-    rocket::ignite()
-        .mount("/", routes![index, stream_auth])
-        .launch();
+  app().launch();
 }
