@@ -1,0 +1,8 @@
+[package]
+name = "auth-plan9-games"
+version = "0.1.0"
+authors = ["Jon Daniel <me@jondaniel.email>"]
+edition = "2018"
+
+[dependencies]
+rocket = "0.4.0"
